@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var collision=get_slide_collision(i)
 		if collision.get_collider().has_meta("enemy"):
-			self.position = spawn_point
+			get_tree().reload_current_scene()
 			
 	#if you have cards, do card stuff
 	var card = get_node("Camera2D/cardSelected")
