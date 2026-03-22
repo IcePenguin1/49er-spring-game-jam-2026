@@ -2,9 +2,10 @@ extends CharacterBody2D
 @export var speed=100
 var timer=3
 var sleep=true
+var is_dead=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +24,15 @@ func _process(delta: float) -> void:
 	timer-=delta
 	if timer <=0:
 		queue_free()
+	if is_dead:
+		var char = get_node("%player")
+		if char.facing_right:
+			char.velocity.x+=100
+		else:
+			char.velocity.x-=100
+		queue_free()
+	
+
 	
 	
 	
