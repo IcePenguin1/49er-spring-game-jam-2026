@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://nqpqnrpqam1r"]
+[gd_scene format=3 uid="uid://nqpqnrpqam1r"]
 
 [ext_resource type="Script" uid="uid://cqwi8bln3rmc5" path="res://birdup.gd" id="1_caidd"]
 
@@ -6,13 +6,14 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uney0"]
 
-[node name="birdup" type="CharacterBody2D"]
+[node name="birdup" type="CharacterBody2D" unique_id=668948539]
 script = ExtResource("1_caidd")
+metadata/enemy = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=215183156]
 shape = SubResource("CapsuleShape2D_71j37")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1273128854]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(-1.90735e-06, 1.84774e-06)
 scale = Vector2(20, 30)

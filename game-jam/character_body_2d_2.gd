@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -550.0
 var timer=0
 var change=1
 var jumps=0
+var is_dead=false
 
 
 func _physics_process(delta: float) -> void:
@@ -30,7 +31,11 @@ func _physics_process(delta: float) -> void:
 				queue_free()
 		else:
 			velocity.x=0
-	
+		
+		if is_dead:
+			var char = get_node("%player")
+			char.velocity.y=-600
+			queue_free()
 		
 
 	move_and_slide()

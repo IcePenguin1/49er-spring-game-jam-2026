@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cafpa78s5h0xq"]
+[gd_scene format=3 uid="uid://cafpa78s5h0xq"]
 
 [ext_resource type="Script" uid="uid://dulrqnymrtupe" path="res://character_body_2d.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b0pf3yq2j3h24" path="res://Enemy.tscn" id="2_0xm2m"]
@@ -20,28 +20,29 @@ size = Vector2(1671.5, 20)
 gradient = SubResource("Gradient_h2yge")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(50, 50)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_h2yge"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=222011104]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=586272232]
 metadata/ground = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=434820036]
 physics_interpolation_mode = 2
 position = Vector2(808.75, 15)
 shape = SubResource("RectangleShape2D_7dm0k")
 debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=1998833960]
 position = Vector2(0.250025, 1.19209e-06)
 scale = Vector2(1672, 20)
 texture = SubResource("CanvasTexture_7dm0k")
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="." unique_id=1032476740]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 position = Vector2(26, -33)
@@ -49,49 +50,49 @@ script = ExtResource("1_ig7tw")
 SPEED = 300.0
 metadata/player = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=517115226]
 physics_interpolation_mode = 1
 shape = SubResource("CapsuleShape2D_7dm0k")
 
-[node name="Sprite2D" type="Sprite2D" parent="player/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player/CollisionShape2D" unique_id=1510456502]
 physics_interpolation_mode = 1
 position = Vector2(0, -0.343748)
 scale = Vector2(0.314453, 0.479492)
 texture = SubResource("GradientTexture2D_1bvp3")
 
-[node name="attack_front" type="Area2D" parent="player"]
+[node name="attack_front" type="Area2D" parent="player" unique_id=945867080]
 unique_name_in_owner = true
 position = Vector2(20, 0)
 script = ExtResource("2_h2yge")
+metadata/slash = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_front"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_front" unique_id=1829354581]
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="Sprite2D" type="Sprite2D" parent="player/attack_front/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player/attack_front/CollisionShape2D" unique_id=228146366]
 modulate = Color(0.701961, 0, 0, 0.596078)
 position = Vector2(4.76837e-07, 4.76837e-07)
-scale = Vector2(20, 20)
+scale = Vector2(50, 50)
 texture = SubResource("CanvasTexture_h2yge")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1400440866]
 physics_interpolation_mode = 1
 position = Vector2(16, -29)
 
-[node name="Aim" type="Sprite2D" parent="player"]
+[node name="Aim" type="Sprite2D" parent="player" unique_id=1198156820]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(20, 0)
 scale = Vector2(2, 2)
 texture = SubResource("CanvasTexture_7mycd")
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("2_0xm2m")]
+[node name="CharacterBody2D2" parent="." unique_id=47315423 instance=ExtResource("2_0xm2m")]
 position = Vector2(356, -39)
 
-[node name="birdup" parent="." instance=ExtResource("4_1bvp3")]
+[node name="birdup" parent="." unique_id=1084635098 instance=ExtResource("4_1bvp3")]
 position = Vector2(260, -108)
-metadata/enemy = true
 
-[node name="sug" parent="." instance=ExtResource("5_lquwl")]
+[node name="sug" parent="." unique_id=1898033591 instance=ExtResource("5_lquwl")]
 position = Vector2(117, -3)
 
-[node name="slimCard" parent="." instance=ExtResource("6_7mycd")]
+[node name="slimCard" parent="." unique_id=1000650407 instance=ExtResource("6_7mycd")]
 position = Vector2(84, -24)

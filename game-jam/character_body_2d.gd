@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, 30)
 			
 	if Input.is_action_just_pressed("attack") and !attacking:
 		self.get_node("attack_front").set_process(true)
@@ -78,5 +78,3 @@ func _physics_process(delta: float) -> void:
 		var collision=get_slide_collision(i)
 		if collision.get_collider().has_meta("enemy"):
 			self.position = spawn_point
-
-		
