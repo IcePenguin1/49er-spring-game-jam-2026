@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cufwfuli3gfww"]
+
+[ext_resource type="Script" uid="uid://dqmormva6slmw" path="res://sug.gd" id="1_osop8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_424kq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8k3f6"]
+
+[node name="sug" type="CharacterBody2D"]
+script = ExtResource("1_osop8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_424kq")
+metadata/ground = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-1.90735e-06, 1.84774e-06)
+scale = Vector2(20, 30)
+texture = SubResource("CanvasTexture_8k3f6")
