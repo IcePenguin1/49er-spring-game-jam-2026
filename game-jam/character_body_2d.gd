@@ -39,11 +39,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and !attacking:
 		self.get_node("attack_front").set_process(true)
 		attacking = true
+		get_node("%PlayerAnimations").play("attack_forward")
+		get_node("%PlayerAnimations").offset.x = 32
 	else:
 		time += delta
 		if(time >= attack_cooldown):
 			attacking = false
 			self.get_node("attack_front").set_process(false)
+			get_node("%PlayerAnimations").play("default")
+			get_node("%PlayerAnimations").offset.x = 0
+			time = 0
 	
 
 	mouseDirection = global_position - get_global_mouse_position();
@@ -52,15 +57,15 @@ func _physics_process(delta: float) -> void:
 		if !facing_right:
 			get_node("attack_front").position += Vector2(40, 0)
 			get_node("Aim").position *= -1
-		if sign(get_node("CollisionShape2D/Sprite2D").scale.x) < 0:
-			get_node("CollisionShape2D/Sprite2D").scale.x *= -1
+		if sign(get_node("%PlayerAnimations").scale.x) < 0:
+			get_node("%PlayerAnimations").scale.x *= -1
 		facing_right = true
 	if sign(direction) < 0:
 		if facing_right:
 			get_node("attack_front").position -= Vector2(40, 0)
 			get_node("Aim").position *= -1
-		if sign(get_node("CollisionShape2D/Sprite2D").scale.x) > 0:
-			get_node("CollisionShape2D/Sprite2D").scale.x *= -1
+		if sign(get_node("%PlayerAnimations").scale.x) > 0:
+			get_node("%PlayerAnimations").scale.x *= -1
 		facing_right = false
 	move_and_slide()
 	for i in get_slide_collision_count():
