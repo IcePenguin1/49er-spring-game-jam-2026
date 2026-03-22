@@ -1,32 +1,67 @@
-[gd_scene format=3 uid="uid://cafpa78s5h0xq"]
+[gd_scene load_steps=42 format=3 uid="uid://cafpa78s5h0xq"]
 
 [ext_resource type="PackedScene" uid="uid://chcw1fpbm0ken" path="res://static_body_2d.tscn" id="1_getpj"]
 [ext_resource type="Script" uid="uid://dulrqnymrtupe" path="res://character_body_2d.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b0pf3yq2j3h24" path="res://Enemy.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://bn5x66gy1qktv" path="res://Assets/birdstrike1.png" id="2_82xsv"]
 [ext_resource type="Script" uid="uid://bbvct5uktqjl1" path="res://slash.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cuqxcav32405i" path="res://Assets/birddown1.png" id="2_htxhm"]
 [ext_resource type="Texture2D" uid="uid://bpbuad60gxfj6" path="res://Assets/birdstrike2.png" id="3_getpj"]
+[ext_resource type="Texture2D" uid="uid://baupc3bdqaw7m" path="res://Assets/birddown2.png" id="3_jq2sk"]
 [ext_resource type="PackedScene" uid="uid://nqpqnrpqam1r" path="res://birdup.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://c7vglxarl5c4l" path="res://Assets/birddown3.png" id="4_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://cnlxnpmm53d30" path="res://Assets/birdstrike3.png" id="4_ryguw"]
+[ext_resource type="Texture2D" uid="uid://dhcy0ntdxg6t4" path="res://Assets/birddown4.png" id="5_0rl1p"]
 [ext_resource type="Texture2D" uid="uid://dmymyt0c7868k" path="res://Assets/birdstrike4.png" id="5_d13ii"]
 [ext_resource type="PackedScene" uid="uid://cufwfuli3gfww" path="res://sug.tscn" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://c4m01ji5uipk0" path="res://Assets/birdstrike5.png" id="6_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://c8ng2vgrudfiu" path="res://slim_card.tscn" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dy1ju4y1nkai0" path="res://Assets/birddown5.png" id="6_ok6jj"]
 [ext_resource type="Texture2D" uid="uid://cr0qg8sxl0q14" path="res://Assets/birdstrike6.png" id="7_0odxb"]
 [ext_resource type="PackedScene" uid="uid://bclruglrhh337" path="res://bird_card.tscn" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://cge3c3q8vb4g3" path="res://Assets/birddown6.png" id="7_facbu"]
 [ext_resource type="PackedScene" uid="uid://c701xjb7pex7r" path="res://sug_card.tscn" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://q41efscdo3rd" path="res://Assets/birdup1.png" id="8_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://dyxgukbve7k1u" path="res://Assets/charidl1.png" id="8_lswn8"]
 [ext_resource type="Texture2D" uid="uid://cfhhmn0bbuf2e" path="res://Assets/charidl2.png" id="9_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://cbumtj632te0x" path="res://Assets/birdup2.png" id="9_xuqvo"]
 [ext_resource type="Script" uid="uid://dmhbnygxu0t6w" path="res://texture_rect.gd" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://d0pl2yailrqdy" path="res://Assets/birdup3.png" id="10_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://bs15tcfd8qpdn" path="res://Assets/charidl3.png" id="10_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://duer4csukj1h6" path="res://Assets/birdup4.png" id="11_kq58d"]
 [ext_resource type="Texture2D" uid="uid://co3olde5s7g6i" path="res://Assets/charidl4.png" id="11_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dpkg1r7ikui5v" path="res://Assets/charidl5.png" id="12_kq58d"]
+[ext_resource type="Texture2D" uid="uid://cv6qie6urgnhw" path="res://Assets/birdup5.png" id="13_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://dlfd6jl5b8qc" path="res://Assets/birdup6.png" id="14_xuqvo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dm0k"]
 height = 60.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_seu75"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_htxhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jq2sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4k2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0rl1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ok6jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_facbu")
+}],
+"loop": true,
+"name": &"attack_down",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_82xsv")
@@ -52,6 +87,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_a6jrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xuqvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qsp4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kq58d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_a6jrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xuqvo")
+}],
+"loop": true,
+"name": &"attack_up",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_lswn8")
 }, {
 "duration": 1.0,
@@ -68,13 +126,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(50, 50)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_h2yge"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kek77"]
 load_path = "res://.godot/imported/birdCardSprite.png-ee8abfcf8543d0b208a089dd83138b17.ctex"
@@ -88,11 +144,11 @@ size = Vector2(189, 481)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_d13ii"]
 
-[node name="Node2D" type="Node2D" unique_id=154359378]
+[node name="Node2D" type="Node2D"]
 
-[node name="StaticBody2D" parent="." unique_id=2063034279 instance=ExtResource("1_getpj")]
+[node name="StaticBody2D" parent="." instance=ExtResource("1_getpj")]
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=1269011490]
+[node name="player" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 position = Vector2(26, -33)
@@ -100,37 +156,49 @@ script = ExtResource("1_ig7tw")
 SPEED = 300.0
 metadata/player = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1249213527]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 physics_interpolation_mode = 1
 shape = SubResource("CapsuleShape2D_7dm0k")
 
-[node name="PlayerAnimations" type="AnimatedSprite2D" parent="player/CollisionShape2D" unique_id=363890715]
+[node name="PlayerAnimations" type="AnimatedSprite2D" parent="player/CollisionShape2D"]
 unique_name_in_owner = true
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_seu75")
-animation = &"attack_forward"
+animation = &"attack_up"
 offset = Vector2(32, 0)
 
-[node name="attack_front" type="Area2D" parent="player" unique_id=1652795134]
+[node name="attack_front" type="Area2D" parent="player"]
 unique_name_in_owner = true
 position = Vector2(20, 0)
 script = ExtResource("2_h2yge")
 metadata/slash = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_front" unique_id=508445907]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_front"]
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="Sprite2D" type="Sprite2D" parent="player/attack_front/CollisionShape2D" unique_id=1731020697]
-modulate = Color(0.701961, 0, 0, 0.596078)
-position = Vector2(4.76837e-07, 4.76837e-07)
-scale = Vector2(50, 50)
-texture = SubResource("CanvasTexture_h2yge")
+[node name="attack_up" type="Area2D" parent="player"]
+unique_name_in_owner = true
+position = Vector2(0, -50)
+script = ExtResource("2_h2yge")
+metadata/slash = false
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=27466726]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_up"]
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="attack_down" type="Area2D" parent="player"]
+unique_name_in_owner = true
+position = Vector2(0, 50)
+script = ExtResource("2_h2yge")
+metadata/slash = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_down"]
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
 physics_interpolation_mode = 1
 position = Vector2(16, -29)
 
-[node name="cardSelected" type="TextureRect" parent="player/Camera2D" unique_id=746621041]
+[node name="cardSelected" type="TextureRect" parent="player/Camera2D"]
 offset_left = 452.0
 offset_top = 151.0
 offset_right = 553.0
@@ -138,62 +206,62 @@ offset_bottom = 304.0
 texture = SubResource("CompressedTexture2D_kek77")
 script = ExtResource("10_efxa6")
 
-[node name="Aim" type="Sprite2D" parent="player" unique_id=11619475]
+[node name="Aim" type="Sprite2D" parent="player"]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(20, 0)
 scale = Vector2(2, 2)
 texture = SubResource("CanvasTexture_7mycd")
 
-[node name="Area2D" type="Area2D" parent="player/Aim" unique_id=314877785]
+[node name="Area2D" type="Area2D" parent="player/Aim"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Aim/Area2D" unique_id=378954725]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Aim/Area2D"]
 shape = SubResource("RectangleShape2D_82xsv")
 
-[node name="CharacterBody2D2" parent="." unique_id=1266775443 instance=ExtResource("2_0xm2m")]
+[node name="CharacterBody2D2" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(164, 47)
 
-[node name="birdup" parent="." unique_id=1371173407 instance=ExtResource("4_1bvp3")]
+[node name="birdup" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(222, 42)
 
-[node name="sug" parent="." unique_id=1582953955 instance=ExtResource("5_lquwl")]
+[node name="sug" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(117, -3)
 
-[node name="slimCard" parent="." unique_id=610920080 instance=ExtResource("6_7mycd")]
+[node name="slimCard" parent="." instance=ExtResource("6_7mycd")]
 position = Vector2(310, -44)
 
-[node name="birdCard" parent="." unique_id=55026004 instance=ExtResource("7_272bh")]
+[node name="birdCard" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(210, -45)
 
-[node name="sugCard" parent="." unique_id=212868311 instance=ExtResource("8_5vw27")]
+[node name="sugCard" parent="." instance=ExtResource("8_5vw27")]
 position = Vector2(404, -46)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1720609368]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 metadata/ground = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=840052165]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 physics_interpolation_mode = 2
 position = Vector2(-136, -101)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ryguw")
 debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D" unique_id=1100983833]
-position = Vector2(1.4999948, 0.49998474)
-scale = Vector2(188.00002, 478.00003)
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D"]
+position = Vector2(1.49999, 0.499985)
+scale = Vector2(188, 478)
 texture = SubResource("CanvasTexture_d13ii")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1592201943]
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(430, -56)
 metadata/ground = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2030673028]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 physics_interpolation_mode = 2
 position = Vector2(160, -49)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ryguw")
 debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D" unique_id=1268586492]
-position = Vector2(1.4999948, 0.49998474)
-scale = Vector2(188.00002, 478.00003)
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D"]
+position = Vector2(1.49999, 0.499985)
+scale = Vector2(188, 478)
 texture = SubResource("CanvasTexture_d13ii")

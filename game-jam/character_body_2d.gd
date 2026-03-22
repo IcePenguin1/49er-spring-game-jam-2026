@@ -19,6 +19,11 @@ var slime = load("res://Enemy.tscn")
 var bird = load("res://birdup.tscn")
 var sug = load("res://sug.tscn")
 
+func _ready() -> void:
+	get_node("%PlayerAnimations").play("default")
+	get_node("%PlayerAnimations").offset.x = 0
+	get_node("%PlayerAnimations").offset.y = 0
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -35,19 +40,32 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x,direction * SPEED,40)
 	else:
 		velocity.x = move_toward(velocity.x, 0, 40)
-			
-	if Input.is_action_just_pressed("attack") and !attacking:
+	
+	if Input.is_action_pressed("up") and Input.is_action_just_pressed("attack") and !attacking:
+		self.get_node("attack_up").set_process(true)
+		attacking = true
+		get_node("%PlayerAnimations").play("attack_up")
+		get_node("%PlayerAnimations").offset.y = -15
+	elif Input.is_action_pressed("down") and Input.is_action_just_pressed("attack") and !attacking:
+		self.get_node("attack_down").set_process(true)
+		attacking = true
+		get_node("%PlayerAnimations").play("attack_down")
+		get_node("%PlayerAnimations").offset.y = 15
+	elif Input.is_action_just_pressed("attack") and !attacking:
 		self.get_node("attack_front").set_process(true)
 		attacking = true
 		get_node("%PlayerAnimations").play("attack_forward")
 		get_node("%PlayerAnimations").offset.x = 32
-	else:
+	elif attacking:
 		time += delta
 		if(time >= attack_cooldown):
 			attacking = false
 			self.get_node("attack_front").set_process(false)
+			self.get_node("attack_up").set_process(false)
+			self.get_node("attack_down").set_process(false)
 			get_node("%PlayerAnimations").play("default")
 			get_node("%PlayerAnimations").offset.x = 0
+			get_node("%PlayerAnimations").offset.y = 0
 			time = 0
 	
 
