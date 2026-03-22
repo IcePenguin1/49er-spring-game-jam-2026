@@ -1,19 +1,16 @@
-[gd_scene load_steps=42 format=3 uid="uid://cafpa78s5h0xq"]
+[gd_scene format=3 uid="uid://cafpa78s5h0xq"]
 
 [ext_resource type="PackedScene" uid="uid://chcw1fpbm0ken" path="res://static_body_2d.tscn" id="1_getpj"]
 [ext_resource type="Script" uid="uid://dulrqnymrtupe" path="res://character_body_2d.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://b0pf3yq2j3h24" path="res://Enemy.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://bn5x66gy1qktv" path="res://Assets/birdstrike1.png" id="2_82xsv"]
 [ext_resource type="Script" uid="uid://bbvct5uktqjl1" path="res://slash.gd" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://cuqxcav32405i" path="res://Assets/birddown1.png" id="2_htxhm"]
 [ext_resource type="Texture2D" uid="uid://bpbuad60gxfj6" path="res://Assets/birdstrike2.png" id="3_getpj"]
 [ext_resource type="Texture2D" uid="uid://baupc3bdqaw7m" path="res://Assets/birddown2.png" id="3_jq2sk"]
-[ext_resource type="PackedScene" uid="uid://nqpqnrpqam1r" path="res://birdup.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://c7vglxarl5c4l" path="res://Assets/birddown3.png" id="4_4k2k6"]
 [ext_resource type="Texture2D" uid="uid://cnlxnpmm53d30" path="res://Assets/birdstrike3.png" id="4_ryguw"]
 [ext_resource type="Texture2D" uid="uid://dhcy0ntdxg6t4" path="res://Assets/birddown4.png" id="5_0rl1p"]
 [ext_resource type="Texture2D" uid="uid://dmymyt0c7868k" path="res://Assets/birdstrike4.png" id="5_d13ii"]
-[ext_resource type="PackedScene" uid="uid://cufwfuli3gfww" path="res://sug.tscn" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://c4m01ji5uipk0" path="res://Assets/birdstrike5.png" id="6_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://c8ng2vgrudfiu" path="res://slim_card.tscn" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dy1ju4y1nkai0" path="res://Assets/birddown5.png" id="6_ok6jj"]
@@ -144,11 +141,11 @@ size = Vector2(189, 481)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_d13ii"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=2081473225]
 
-[node name="StaticBody2D" parent="." instance=ExtResource("1_getpj")]
+[node name="StaticBody2D" parent="." unique_id=503489974 instance=ExtResource("1_getpj")]
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="." unique_id=304938068]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 position = Vector2(26, -33)
@@ -156,49 +153,49 @@ script = ExtResource("1_ig7tw")
 SPEED = 300.0
 metadata/player = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=99161514]
 physics_interpolation_mode = 1
 shape = SubResource("CapsuleShape2D_7dm0k")
 
-[node name="PlayerAnimations" type="AnimatedSprite2D" parent="player/CollisionShape2D"]
+[node name="PlayerAnimations" type="AnimatedSprite2D" parent="player/CollisionShape2D" unique_id=497892706]
 unique_name_in_owner = true
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_seu75")
 animation = &"attack_up"
 offset = Vector2(32, 0)
 
-[node name="attack_front" type="Area2D" parent="player"]
+[node name="attack_front" type="Area2D" parent="player" unique_id=877037284]
 unique_name_in_owner = true
 position = Vector2(20, 0)
 script = ExtResource("2_h2yge")
 metadata/slash = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_front"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_front" unique_id=641706712]
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="attack_up" type="Area2D" parent="player"]
+[node name="attack_up" type="Area2D" parent="player" unique_id=1945303639]
 unique_name_in_owner = true
 position = Vector2(0, -50)
 script = ExtResource("2_h2yge")
 metadata/slash = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_up"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_up" unique_id=785627487]
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="attack_down" type="Area2D" parent="player"]
+[node name="attack_down" type="Area2D" parent="player" unique_id=1161089485]
 unique_name_in_owner = true
 position = Vector2(0, 50)
 script = ExtResource("2_h2yge")
 metadata/slash = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_down"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_down" unique_id=1769841911]
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=439259834]
 physics_interpolation_mode = 1
 position = Vector2(16, -29)
 
-[node name="cardSelected" type="TextureRect" parent="player/Camera2D"]
+[node name="cardSelected" type="TextureRect" parent="player/Camera2D" unique_id=704419920]
 offset_left = 452.0
 offset_top = 151.0
 offset_right = 553.0
@@ -206,62 +203,93 @@ offset_bottom = 304.0
 texture = SubResource("CompressedTexture2D_kek77")
 script = ExtResource("10_efxa6")
 
-[node name="Aim" type="Sprite2D" parent="player"]
+[node name="Aim" type="Sprite2D" parent="player" unique_id=1381521553]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(20, 0)
 scale = Vector2(2, 2)
 texture = SubResource("CanvasTexture_7mycd")
 
-[node name="Area2D" type="Area2D" parent="player/Aim"]
+[node name="Area2D" type="Area2D" parent="player/Aim" unique_id=929977267]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Aim/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Aim/Area2D" unique_id=153015508]
 shape = SubResource("RectangleShape2D_82xsv")
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(164, 47)
+[node name="slimCard" parent="." unique_id=1959377179 instance=ExtResource("6_7mycd")]
+position = Vector2(361, -46)
 
-[node name="birdup" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(222, 42)
+[node name="birdCard" parent="." unique_id=935403158 instance=ExtResource("7_272bh")]
+position = Vector2(925, -58)
 
-[node name="sug" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(117, -3)
+[node name="sugCard" parent="." unique_id=848826262 instance=ExtResource("8_5vw27")]
+position = Vector2(1040, -59)
 
-[node name="slimCard" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(310, -44)
-
-[node name="birdCard" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(210, -45)
-
-[node name="sugCard" parent="." instance=ExtResource("8_5vw27")]
-position = Vector2(404, -46)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1527592501]
 metadata/ground = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1322366198]
 physics_interpolation_mode = 2
-position = Vector2(-136, -101)
+position = Vector2(-46, -92)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ryguw")
 debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D" unique_id=1105499161]
 position = Vector2(1.49999, 0.499985)
 scale = Vector2(188, 478)
 texture = SubResource("CanvasTexture_d13ii")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1299932832]
 position = Vector2(430, -56)
 metadata/ground = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=129609563]
 physics_interpolation_mode = 2
-position = Vector2(160, -49)
+position = Vector2(297, 22)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ryguw")
 debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D" unique_id=96046432]
+position = Vector2(1.49999, 0.499985)
+scale = Vector2(188, 478)
+texture = SubResource("CanvasTexture_d13ii")
+
+[node name="Label" type="Label" parent="." unique_id=2098558564]
+offset_left = 93.0
+offset_top = -219.0
+offset_right = 420.0
+offset_bottom = -101.0
+text = "Press E Near Cards to Pick Up, Q Rotates through Aquired Cards, Right click to charge Spawn on reticle, Left Click to Strike, WASD Movement"
+autowrap_mode = 3
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=785001778]
+position = Vector2(430, -56)
+metadata/ground = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=188338463]
+physics_interpolation_mode = 2
+position = Vector2(1060, -27)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ryguw")
+debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4/CollisionShape2D" unique_id=948683441]
+position = Vector2(1.49999, 0.499985)
+scale = Vector2(188, 478)
+texture = SubResource("CanvasTexture_d13ii")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1330587916]
+position = Vector2(430, -56)
+metadata/ground = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=1122495641]
+physics_interpolation_mode = 2
+position = Vector2(798, -170)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ryguw")
+debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5/CollisionShape2D" unique_id=219538196]
 position = Vector2(1.49999, 0.499985)
 scale = Vector2(188, 478)
 texture = SubResource("CanvasTexture_d13ii")

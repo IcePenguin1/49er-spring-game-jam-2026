@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://c8ng2vgrudfiu"]
 
 [ext_resource type="Script" uid="uid://m3juk5s31xpr" path="res://area_2d.gd" id="1_8e4fu"]
+[ext_resource type="Texture2D" uid="uid://bjeytmuli7vmk" path="res://Assets/slimCardSprite.png" id="2_k50sb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e4fu"]
 size = Vector2(80, 80)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_8e4fu"]
 
 [node name="slimCard" type="CharacterBody2D" unique_id=50767136]
 metadata/slimcard = true
@@ -17,7 +16,4 @@ script = ExtResource("1_8e4fu")
 shape = SubResource("RectangleShape2D_8e4fu")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D" unique_id=2039996997]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(-1.90735e-06, 1.84774e-06)
-scale = Vector2(20, 30)
-texture = SubResource("CanvasTexture_8e4fu")
+texture = ExtResource("2_k50sb")

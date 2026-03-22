@@ -12,7 +12,7 @@ var selected = 1
 var facing_right = true
 var attacking = false;
 var time = 0
-var aim_length: float = 10
+var aim_length: float = 30
 var mouseDirection=Vector2(0,0)
 var currentCardNum = 0
 var slime = load("res://Enemy.tscn")
@@ -89,7 +89,8 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var collision=get_slide_collision(i)
 		if collision.get_collider().has_meta("enemy"):
-			get_tree().reload_current_scene()
+			if get_tree() :
+				get_tree().reload_current_scene()
 			
 	#if you have cards, do card stuff
 	var card = get_node("Camera2D/cardSelected")
@@ -127,10 +128,10 @@ func _physics_process(delta: float) -> void:
 							spawn.position = get_node("Aim").global_position+Vector2(60,0)
 
 			
-			aim_length = 0
+			aim_length = 30
 			get_node("Aim").set_process(false)
 		if not Input.is_action_pressed("summon"):
-			aim_length = 0
+			aim_length = 30
 	else :
 		card.set_visible(false)
 		card.set_process(false)

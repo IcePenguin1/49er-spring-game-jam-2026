@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://c701xjb7pex7r"]
 
 [ext_resource type="Script" uid="uid://t62p8j1gollt" path="res://sug_card_area.gd" id="1_kng6g"]
+[ext_resource type="Texture2D" uid="uid://br4i6d6tbvp1q" path="res://Assets/slugCardSprite.png" id="2_ur4q0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kng6g"]
 size = Vector2(80, 80)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_ff177"]
 
 [node name="sugCard" type="CharacterBody2D" unique_id=951290132]
 
@@ -17,7 +16,4 @@ position = Vector2(0, -1.1368684e-13)
 shape = SubResource("RectangleShape2D_kng6g")
 
 [node name="Sprite2D" type="Sprite2D" parent="sugCardArea/CollisionShape2D" unique_id=517535517]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(-1.90735e-06, 1.8477401e-06)
-scale = Vector2(20, 30)
-texture = SubResource("CanvasTexture_ff177")
+texture = ExtResource("2_ur4q0")

@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://bclruglrhh337"]
 
 [ext_resource type="Script" uid="uid://c15u3hvxu7bew" path="res://bird_card_area.gd" id="1_vmbks"]
+[ext_resource type="Texture2D" uid="uid://bhaj28snjknql" path="res://Assets/birdCardSprite.png" id="2_npnju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npnju"]
 size = Vector2(80, 80)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_wqmmi"]
 
 [node name="birdCard" type="CharacterBody2D" unique_id=2289124]
 
@@ -16,7 +15,4 @@ script = ExtResource("1_vmbks")
 shape = SubResource("RectangleShape2D_npnju")
 
 [node name="Sprite2D" type="Sprite2D" parent="birdCardArea/CollisionShape2D" unique_id=175220745]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(-1.90735e-06, 1.84774e-06)
-scale = Vector2(20, 30)
-texture = SubResource("CanvasTexture_wqmmi")
+texture = ExtResource("2_npnju")

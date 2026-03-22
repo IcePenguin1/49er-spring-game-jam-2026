@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chcw1fpbm0ken"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
-size = Vector2(1671.5, 20)
+size = Vector2(2872, 20)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7dm0k"]
 
@@ -10,11 +10,11 @@ metadata/ground = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=841252867]
 physics_interpolation_mode = 2
-position = Vector2(808.75, 15)
+position = Vector2(1409, 15)
 shape = SubResource("RectangleShape2D_7dm0k")
 debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1087575459]
-position = Vector2(0.250025, 1.19209e-06)
-scale = Vector2(1672, 20)
+position = Vector2(2.5000916, 1.19209e-06)
+scale = Vector2(2852.9998, 20)
 texture = SubResource("CanvasTexture_7dm0k")
