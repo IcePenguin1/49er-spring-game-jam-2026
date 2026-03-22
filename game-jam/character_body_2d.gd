@@ -88,7 +88,6 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_pressed("summon"):
 			aim_length += 100 * delta
 		elif Input.is_action_just_released("summon"):
-		
 			selected = cards[currentCardNum]
 			if selected == "birdCard" :
 				var spawn = bird.instantiate()
@@ -99,9 +98,16 @@ func _physics_process(delta: float) -> void:
 				get_parent().add_child(spawn)
 				spawn.position = get_node("Aim").global_position
 			elif selected == "sugCard" :
-				var spawn = sug.instantiate()
-				get_parent().add_child(spawn)
-				spawn.position = get_node("Aim").global_position
+				var collisions = get_node("Aim/Area2D").get_overlapping_bodies()
+				for col in collisions:
+					if col.has_meta("ground"):
+						var spawn = sug.instantiate()
+						get_parent().add_child(spawn)
+						if facing_right :
+							spawn.position = get_node("Aim").global_position-Vector2(60,0)
+						else :
+							spawn.position = get_node("Aim").global_position+Vector2(60,0)
+
 			
 			aim_length = 0
 			get_node("Aim").set_process(false)

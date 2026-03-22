@@ -3,8 +3,9 @@ var timer = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	get_node("CollisionShape2D/AnimatedSprite2D").play()
+	if get_node("../player").facing_right :
+		scale.x=-1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

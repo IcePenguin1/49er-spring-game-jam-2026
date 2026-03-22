@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://cafpa78s5h0xq"]
+[gd_scene format=3 uid="uid://cafpa78s5h0xq"]
 
+[ext_resource type="PackedScene" uid="uid://chcw1fpbm0ken" path="res://static_body_2d.tscn" id="1_getpj"]
 [ext_resource type="Script" uid="uid://dulrqnymrtupe" path="res://character_body_2d.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b0pf3yq2j3h24" path="res://Enemy.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://bn5x66gy1qktv" path="res://Assets/birdstrike1.png" id="2_82xsv"]
@@ -20,11 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://bs15tcfd8qpdn" path="res://Assets/charidl3.png" id="10_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://co3olde5s7g6i" path="res://Assets/charidl4.png" id="11_qsp4k"]
 [ext_resource type="Texture2D" uid="uid://dpkg1r7ikui5v" path="res://Assets/charidl5.png" id="12_kq58d"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
-size = Vector2(1671.5, 20)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_7dm0k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dm0k"]
 height = 60.0
@@ -85,23 +81,18 @@ load_path = "res://.godot/imported/birdCardSprite.png-ee8abfcf8543d0b208a089dd83
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82xsv"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-metadata/ground = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryguw"]
+size = Vector2(189, 481)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-physics_interpolation_mode = 2
-position = Vector2(808.75, 15)
-shape = SubResource("RectangleShape2D_7dm0k")
-debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
+[sub_resource type="CanvasTexture" id="CanvasTexture_d13ii"]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
-position = Vector2(0.250025, 1.19209e-06)
-scale = Vector2(1672, 20)
-texture = SubResource("CanvasTexture_7dm0k")
+[node name="Node2D" type="Node2D" unique_id=154359378]
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="StaticBody2D" parent="." unique_id=2063034279 instance=ExtResource("1_getpj")]
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1269011490]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 position = Vector2(26, -33)
@@ -109,37 +100,37 @@ script = ExtResource("1_ig7tw")
 SPEED = 300.0
 metadata/player = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1249213527]
 physics_interpolation_mode = 1
 shape = SubResource("CapsuleShape2D_7dm0k")
 
-[node name="PlayerAnimations" type="AnimatedSprite2D" parent="player/CollisionShape2D"]
+[node name="PlayerAnimations" type="AnimatedSprite2D" parent="player/CollisionShape2D" unique_id=363890715]
 unique_name_in_owner = true
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_seu75")
 animation = &"attack_forward"
 offset = Vector2(32, 0)
 
-[node name="attack_front" type="Area2D" parent="player"]
+[node name="attack_front" type="Area2D" parent="player" unique_id=1652795134]
 unique_name_in_owner = true
 position = Vector2(20, 0)
 script = ExtResource("2_h2yge")
 metadata/slash = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_front"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/attack_front" unique_id=508445907]
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="Sprite2D" type="Sprite2D" parent="player/attack_front/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player/attack_front/CollisionShape2D" unique_id=1731020697]
 modulate = Color(0.701961, 0, 0, 0.596078)
 position = Vector2(4.76837e-07, 4.76837e-07)
 scale = Vector2(50, 50)
 texture = SubResource("CanvasTexture_h2yge")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=27466726]
 physics_interpolation_mode = 1
 position = Vector2(16, -29)
 
-[node name="cardSelected" type="TextureRect" parent="player/Camera2D"]
+[node name="cardSelected" type="TextureRect" parent="player/Camera2D" unique_id=746621041]
 offset_left = 452.0
 offset_top = 151.0
 offset_right = 553.0
@@ -147,26 +138,62 @@ offset_bottom = 304.0
 texture = SubResource("CompressedTexture2D_kek77")
 script = ExtResource("10_efxa6")
 
-[node name="Aim" type="Sprite2D" parent="player"]
+[node name="Aim" type="Sprite2D" parent="player" unique_id=11619475]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(20, 0)
 scale = Vector2(2, 2)
 texture = SubResource("CanvasTexture_7mycd")
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("2_0xm2m")]
+[node name="Area2D" type="Area2D" parent="player/Aim" unique_id=314877785]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Aim/Area2D" unique_id=378954725]
+shape = SubResource("RectangleShape2D_82xsv")
+
+[node name="CharacterBody2D2" parent="." unique_id=1266775443 instance=ExtResource("2_0xm2m")]
 position = Vector2(164, 47)
 
-[node name="birdup" parent="." instance=ExtResource("4_1bvp3")]
+[node name="birdup" parent="." unique_id=1371173407 instance=ExtResource("4_1bvp3")]
 position = Vector2(222, 42)
 
-[node name="sug" parent="." instance=ExtResource("5_lquwl")]
+[node name="sug" parent="." unique_id=1582953955 instance=ExtResource("5_lquwl")]
 position = Vector2(117, -3)
 
-[node name="slimCard" parent="." instance=ExtResource("6_7mycd")]
+[node name="slimCard" parent="." unique_id=610920080 instance=ExtResource("6_7mycd")]
 position = Vector2(310, -44)
 
-[node name="birdCard" parent="." instance=ExtResource("7_272bh")]
+[node name="birdCard" parent="." unique_id=55026004 instance=ExtResource("7_272bh")]
 position = Vector2(210, -45)
 
-[node name="sugCard" parent="." instance=ExtResource("8_5vw27")]
+[node name="sugCard" parent="." unique_id=212868311 instance=ExtResource("8_5vw27")]
 position = Vector2(404, -46)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1720609368]
+metadata/ground = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=840052165]
+physics_interpolation_mode = 2
+position = Vector2(-136, -101)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ryguw")
+debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D" unique_id=1100983833]
+position = Vector2(1.4999948, 0.49998474)
+scale = Vector2(188.00002, 478.00003)
+texture = SubResource("CanvasTexture_d13ii")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1592201943]
+position = Vector2(430, -56)
+metadata/ground = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2030673028]
+physics_interpolation_mode = 2
+position = Vector2(160, -49)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ryguw")
+debug_color = Color(0.799613, 0.0175323, 1, 0.894118)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D" unique_id=1268586492]
+position = Vector2(1.4999948, 0.49998474)
+scale = Vector2(188.00002, 478.00003)
+texture = SubResource("CanvasTexture_d13ii")

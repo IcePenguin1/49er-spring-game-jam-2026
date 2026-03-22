@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var speed=100
+@export var speed=300
 var timer=3
 var sleep=true
 var is_dead=false
