@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 	var collisions = get_overlapping_bodies()
 	for col in collisions:
 		if col.has_meta("player") and Input.is_action_just_pressed("pressE"):
+			col.cards.append("slimCard")
 			get_parent().queue_free()

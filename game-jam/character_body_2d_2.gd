@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x=0
 		
 		if is_dead:
-			var char = get_node("%player")
+			var char = get_node("../player")
 			char.velocity.y=-600
 			queue_free()
 		

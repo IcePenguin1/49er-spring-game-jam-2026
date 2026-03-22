@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://nqpqnrpqam1r" path="res://birdup.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cufwfuli3gfww" path="res://sug.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c8ng2vgrudfiu" path="res://slim_card.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bclruglrhh337" path="res://bird_card.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://c701xjb7pex7r" path="res://sug_card.tscn" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://dmhbnygxu0t6w" path="res://texture_rect.gd" id="10_efxa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(1671.5, 20)
@@ -23,6 +26,9 @@ gradient = SubResource("Gradient_h2yge")
 size = Vector2(50, 50)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_h2yge"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kek77"]
+load_path = "res://.godot/imported/birdCardSprite.png-ee8abfcf8543d0b208a089dd83138b17.ctex"
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
 
@@ -79,6 +85,14 @@ texture = SubResource("CanvasTexture_h2yge")
 physics_interpolation_mode = 1
 position = Vector2(16, -29)
 
+[node name="cardSelected" type="TextureRect" parent="player/Camera2D" unique_id=419354916]
+offset_left = 452.0
+offset_top = 151.0
+offset_right = 553.0
+offset_bottom = 304.0
+texture = SubResource("CompressedTexture2D_kek77")
+script = ExtResource("10_efxa6")
+
 [node name="Aim" type="Sprite2D" parent="player" unique_id=1198156820]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(20, 0)
@@ -86,13 +100,19 @@ scale = Vector2(2, 2)
 texture = SubResource("CanvasTexture_7mycd")
 
 [node name="CharacterBody2D2" parent="." unique_id=47315423 instance=ExtResource("2_0xm2m")]
-position = Vector2(356, -39)
+position = Vector2(164, 47)
 
 [node name="birdup" parent="." unique_id=1084635098 instance=ExtResource("4_1bvp3")]
-position = Vector2(260, -108)
+position = Vector2(222, 42)
 
 [node name="sug" parent="." unique_id=1898033591 instance=ExtResource("5_lquwl")]
 position = Vector2(117, -3)
 
 [node name="slimCard" parent="." unique_id=1000650407 instance=ExtResource("6_7mycd")]
-position = Vector2(84, -24)
+position = Vector2(310, -44)
+
+[node name="birdCard" parent="." unique_id=2289124 instance=ExtResource("7_272bh")]
+position = Vector2(210, -45)
+
+[node name="sugCard" parent="." unique_id=951290132 instance=ExtResource("8_5vw27")]
+position = Vector2(404, -46)
