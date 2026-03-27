@@ -43,12 +43,14 @@ radius = 23.0
 height = 140.0
 
 [node name="sug" type="CharacterBody2D" unique_id=879159325]
+visible = false
 script = ExtResource("1_osop8")
 metadata/sug = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=221075494]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_424kq")
+disabled = true
 metadata/ground = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=1701538082]

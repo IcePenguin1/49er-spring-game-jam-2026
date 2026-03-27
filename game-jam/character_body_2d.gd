@@ -18,6 +18,7 @@ var currentCardNum = 0
 var slime = load("res://Enemy.tscn")
 var bird = load("res://birdup.tscn")
 var sug = load("res://sug.tscn")
+var coyoTime=0
 
 func _ready() -> void:
 	get_node("%PlayerAnimations").play("default")
@@ -28,10 +29,14 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		coyoTime-=delta
+	else:
+		coyoTime=.1
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or coyoTime>=0):
 		velocity.y = JUMP_VELOCITY
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -46,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		attacking = true
 		get_node("%PlayerAnimations").play("attack_up")
 		get_node("%PlayerAnimations").offset.y = -15
-	elif Input.is_action_pressed("down") and Input.is_action_just_pressed("attack") and !attacking:
+	elif Input.is_action_pressed("down") and Input.is_action_just_pressed("attack") and !attacking and !is_on_floor():
 		self.get_node("attack_down").set_process(true)
 		attacking = true
 		get_node("%PlayerAnimations").play("attack_down")

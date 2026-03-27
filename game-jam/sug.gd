@@ -5,14 +5,17 @@ var is_dead = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_node("CollisionShape2D/AnimatedSprite2D").play()
-	if get_node("../player").facing_right :
-		get_node("CollisionShape2D/AnimatedSprite2D").rotation_degrees-=180
+
 	await get_tree().create_timer(.04).timeout
 	var collisions = get_node("SugArea2D").get_overlapping_bodies()
 	for col in collisions:
 		if col.has_meta("player"):
 			queue_free()
+	get_node("CollisionShape2D").disabled=false
+	visible=true
+	get_node("CollisionShape2D/AnimatedSprite2D").play()
+	if get_node("../player").facing_right :
+		get_node("CollisionShape2D/AnimatedSprite2D").rotation_degrees-=180
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
