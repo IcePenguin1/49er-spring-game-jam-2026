@@ -10,5 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var collisions = get_overlapping_bodies()
 	for col in collisions:
-		if col.has_meta("enemy"):
+		if col.has_meta("enemy") or col.has_meta("sug"):
 			col.is_dead=true
